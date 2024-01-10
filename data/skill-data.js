@@ -8,3 +8,4 @@ const skills = [
 export { 
 	skills
 }
+
