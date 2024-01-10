@@ -10,9 +10,9 @@
   <ul>
     <% skills.forEach(skill => { %>
       <li>
-				<%= skill.name %> 
+				<%= (skill.skill +': ' + skill.yearsXp + ' years') %> 
 				- 
-				<%= skill.proficient ? 'Experienced' : 'Learning' %>
+				<%= skill.proficient ? 'Experienced' : 'Still learning' %>
 			</li>
     <% }) %>
   </ul>
