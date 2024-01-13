@@ -1,6 +1,24 @@
-
-// Import the model that we exported in the Todo.js model file
 import { Skill } from '../models/skill.js'
+
+
+function newSkill(req, res) {
+  res.render('skills/new')
+}
+
+
+function create(req, res) {
+  req.body.proficient = !!req.body.proficient
+  Skill.create(req.body)
+  .then(skill => {
+		// Notice we are doing a redirect here!
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
+  })
+}
+
 
 function index(req, res) {
   Skill.find({})
@@ -13,26 +31,6 @@ function index(req, res) {
   .catch(error => { // If there's an error, console.log it and redirect back home!
     console.log(error)
     res.redirect('/')
-  })
-}
-
-
-function newSkill(req, res) {
-  res.render('skills/new')
-}
-
-
-function create(req, res) {
-  console.log(req.body)
-  req.body.done = false
-  Skill.create(req.body)
-  .then(skill => {
-		// Notice we are doing a redirect here!
-    res.redirect('/skills')
-  })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/skills')
   })
 }
 
