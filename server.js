@@ -19,6 +19,12 @@ const app = express()
 // view engine setup
 app.set('view engine', 'ejs')
 
+app.use(function(req, res, next) {
+  console.log('Hello SEI!')
+  req.time = new Date().toLocaleTimeString()
+  next()
+})
+
 // basic middleware
 app.use(logger('dev'))
 app.use(express.json())
