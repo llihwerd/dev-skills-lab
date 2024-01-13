@@ -10,11 +10,14 @@
   <ul>
     <% skills.forEach(skill => { %>
       <li>
-				<%= (skill.skill +': ' + skill.yearsXp + ' years') %> 
+				<a href="/skills/<%= skill._id %>"><%= skill.skill %></a>
+        <%= (' : ' + skill.yearsXp + ' years') %>
 				- 
 				<%= skill.proficient ? 'Experienced' : 'Still learning' %>
 			</li>
     <% }) %>
   </ul>
+  <a href="/skills/new">Add Skill</a>
 </body>
 </html>
+

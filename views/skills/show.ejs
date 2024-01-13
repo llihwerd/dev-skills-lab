@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Skills</h1>
+  <h2><%= skill.skill %> #<%= skill._id %></h2>
+  <h3><%= skill.text %></h3>
+  <p>Years of experience: <%= skill.yearsXp %></p>
+  <p>Proficiency: <%= skill.proficient ? 'Experienced' : 'Still Learning' %></p>
+	<a href="/skills">Go back</a>
+</body>
+</html>
