@@ -8,7 +8,12 @@
 <body>
   <h1>New Skill</h1>
   <form action="/skills" method="POST" autocomplete="off">
-    <input type="text" name="text">
+    <label for="skill-input">Skill:</label>
+    <input type="text" name="skill" id="skill-input">
+    <label for="yearsXp-input">Years of Experience:</label>
+    <input type="text" name="yearsXp" id="yearsXP-input">
+    <label for="proficient-checkbox">Proficiency:</label>
+    <input type="checkbox" name="proficient" id="proficient-checkbox" checked>
     <button type="submit">Save Skill</button>
   </form>
 </body>

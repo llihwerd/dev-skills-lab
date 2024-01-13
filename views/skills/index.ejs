@@ -3,13 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Skills</title>
 </head>
 <body>
   <h1>Skills as of <%= time %></h1>
   <ul>
     <% skills.forEach(skill => { %>
       <li>
+        <form 
+          action="/skills/<%= skill._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
 				<a href="/skills/<%= skill._id %>"><%= skill.skill %></a>
         <%= (' : ' + skill.yearsXp + ' years') %>
 				- 

@@ -15,6 +15,8 @@ router.get('/:skillId', skillsCtrl.show)
 // GET localhost:3000/skills
 router.post('/', skillsCtrl.create)
 
+// GET localhost:3000/skills
+router.delete('/:skillId', skillsCtrl.delete)
 
 export { router }
 
